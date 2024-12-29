@@ -23,14 +23,3 @@ async def login(user: UserLogin):
     if not db_user or not bcrypt.verify(user.password, db_user["hashed_password"]):
         raise HTTPException(status_code=400, detail="Invalid credentials")
     return {"user_id" : str(db_user["_id"]), "msg": "User logged in successfully"}
-
-@auth_router.get("/get_user_id/{username}", tags=["Public"])
-async def get_user_id(username: str):
-    # Find the user by username
-    user = db["users"].find_one({"username": username})
-    
-    if user is None:
-        raise HTTPException(status_code=404, detail="User not found")
-    
-    # Return the user ID
-    return {"user_id": str(user["_id"])}  # Convert ObjectId to string
