@@ -37,7 +37,7 @@ MongoDB for cloud database.
 Clone the repository:
 
 ```python
-git clone https://github.com/yourusername/ecommerce-backend.git
+git clone https://github.com/Tashu-Gurnani2520/FastAPI_MongoDB_App.git
 ```
 
 ```python
