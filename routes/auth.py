@@ -3,7 +3,6 @@ from passlib.hash import bcrypt
 from database import db
 from models import User
 from schemas import UserCreate, UserLogin
-from jose import jwt, JWTError
 from datetime import datetime, timedelta
 
 auth_router = APIRouter()
